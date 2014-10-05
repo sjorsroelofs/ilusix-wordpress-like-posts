@@ -26,10 +26,9 @@ jQuery(document).ready(function() {
         );
         
         jQuery(curElement).animate({opacity: 0}, 100, function() {
-            
             if(likePost) {
                 curElement.removeClass('no-like').addClass('like');
-                curElement.find('span.ilpb-like-text').html('Niet meer leuk');
+                curElement.find('span.ilpb-like-text').html(ilp_unlike_text);
                 
                 if(curLikeCount != undefined) {
                     curLikeCount++;
@@ -37,7 +36,7 @@ jQuery(document).ready(function() {
                 }
             } else {
                 curElement.removeClass('like').addClass('no-like');
-                curElement.find('span.ilpb-like-text').html('Vind ik leuk');
+                curElement.find('span.ilpb-like-text').html(ilp_like_text);
                 
                 if(curLikeCount != undefined && curLikeCount > 0) {
                     curLikeCount--;
@@ -46,7 +45,6 @@ jQuery(document).ready(function() {
             }
             
             jQuery(curElement).animate({opacity: 1}, 100);
-            
         });
         
     });

@@ -5,8 +5,9 @@ A WordPress plugin that lets logged-in users like your posts, pages or any other
 
 Installation
 ----
-Install and activate the plugin.
-Place the following code in your theme, inside 'The Loop':
+1. Install and activate the plugin.
+2. In the WordPress admin, go to 'Settings -> Like posts options' and configure the plugin
+3. Place the following code in your theme, inside 'The Loop':
 
 ```php
 <?php ix_like_button(); ?>
