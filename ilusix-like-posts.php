@@ -34,14 +34,15 @@
 $ilpbMetaKeyName          = 'ix_post_likes';
 $ilpbSettingsField        = $ilpbMetaKeyName . '_settings_field';
 $ilpbSettingsOptionName   = $ilpbMetaKeyName . '_plugin_settings';
+
 $likeButtonTexts          = _ix_posts_like_get_button_text();
 $ilpbLikeText             = $likeButtonTexts[0];
 $ilpbUnlikeText           = $likeButtonTexts[1];
 
 
 // Add the ajaxurl to the head
-add_action( 'wp_head', 'ilp_set_ajaxurl' );
-function ilp_set_ajaxurl() {
+add_action( 'wp_head', '_ix_posts_like_set_head_variables' );
+function _ix_posts_like_set_head_variables() {
     global $ilpbLikeText;
     global $ilpbUnlikeText;
 
@@ -58,7 +59,7 @@ function ilp_set_ajaxurl() {
 // Load custom css and javascript
 add_action( 'wp_enqueue_scripts', '_ix_posts_like_load_scripts' );
 function _ix_posts_like_load_scripts() {
-	wp_enqueue_style( 'ilp_css', plugin_dir_url( __FILE__ ) . 'css/ilusix-like-posts.css' );
+    wp_enqueue_style( 'ilp_css', plugin_dir_url( __FILE__ ) . 'css/ilusix-like-posts.css' );
     wp_enqueue_script( 'ilp_javascript', plugin_dir_url( __FILE__ ) . 'js/ilusix-like-posts.js', array( 'jquery' ) );
 }
 
