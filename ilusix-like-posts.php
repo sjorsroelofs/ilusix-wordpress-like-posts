@@ -138,8 +138,8 @@ function _ix_posts_like_get_button_text() {
 
     $result          = array();
     $pluginOptions   = get_option( $ilpbSettingsOptionName );
-    $result[]        = (isset( $pluginOptions['ix_post_likes_plugin_settings_like_text'] ) && !empty( $pluginOptions['ix_post_likes_plugin_settings_like_text'] )) ? $pluginOptions['ix_post_likes_plugin_settings_like_text'] : 'Like';
-    $result[]        = (isset( $pluginOptions['ix_post_likes_plugin_settings_unlike_text'] ) && !empty( $pluginOptions['ix_post_likes_plugin_settings_unlike_text'] )) ? $pluginOptions['ix_post_likes_plugin_settings_unlike_text'] : 'Unlike';
+    $result[]        = (isset( $pluginOptions[$ilpbSettingsOptionName . '_like_text'] ) && !empty( $pluginOptions[$ilpbSettingsOptionName . '_like_text'] )) ? $pluginOptions[$ilpbSettingsOptionName . '_like_text'] : 'Like';
+    $result[]        = (isset( $pluginOptions[$ilpbSettingsOptionName . '_unlike_text'] ) && !empty( $pluginOptions[$ilpbSettingsOptionName . '_unlike_text'] )) ? $pluginOptions[$ilpbSettingsOptionName . '_unlike_text'] : 'Unlike';
 
     return $result;
 }
