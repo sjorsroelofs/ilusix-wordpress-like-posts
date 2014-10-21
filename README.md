@@ -14,6 +14,8 @@ Installation
 ```
 *!! Pleace note that the user has to be logged-in, or the like button won't be displayed !!*
 
+If you’re dynamically loading your posts – for example when using infinite scroll – you might want to call the JavaScript function ix_like_set_click_handlers() after loading the posts, or else the like function won’t work for the new posts.
+
 License
 ----
 The MIT License (MIT)
